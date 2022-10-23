@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 10px;
+  background-color: #26b1cf;
+  color: white;
+  width: 300px;
+  font: 13px Arial, "Helvetica Neue", helvetica, "Lucida Grande", tahoma, sans-serif;
+}

@@ -1,0 +1,18 @@
+{
+    "addToFavorites": {
+      "message": "Додати до вибраного",
+      "description": ""
+    },
+    "addToCompleted": {
+      "message": "Додати до завершених",
+      "description": ""
+    },
+    "favorites": {
+      "message": "вибране",
+      "description": ""
+    },
+    "completed": {
+      "message": "завершені",
+      "description": ""
+    }
+  }

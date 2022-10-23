@@ -1,0 +1,81 @@
+.logo {
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn {
+  background-color: #26a7c5;
+  color: white;
+  outline: none;
+  border: none;
+}
+
+.btn:hover:enabled {
+  cursor: pointer;
+  background-color: #269dbb;
+}
+
+.add-btn {
+  padding: 5px 10px;
+  width: 100%;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.add-btn:disabled,
+.add-btn[disabled] {
+  opacity: 0.5;
+}
+
+.add-btn .name {
+  display: block;
+  text-transform: uppercase;
+}
+
+.add-btn .sub-name {
+  display: block;
+  font-size: 12px;
+}
+
+.view-btn {
+  padding: 3px 6px;
+  background-color: transparent;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.view-btn.active,
+.view-btn:hover:enabled {
+  opacity: 1;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.view-btn .btn-icon {
+  background-size: 16px 16px;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  margin-right: 3px;
+  vertical-align: bottom;
+}
+
+.view-btn .btn-icon.favorites-icon {
+  background-image: url(../public/images/favorite_empty.svg);
+}
+
+.view-btn .btn-icon.completed-icon {
+  background-image: url(../public/images/checkbox_empty.svg);
+}
+
+.view-btn.active .favorites-icon {
+  background-image: url(../public/images/favorite_white.svg);
+}
+
+.view-btn.active .completed-icon {
+  background-image: url(../public/images/checkbox_white.svg);
+}

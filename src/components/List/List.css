@@ -1,0 +1,90 @@
+.list-container {
+  max-height: 240px;
+  overflow: auto;
+}
+
+.list-inner-container {
+  margin: -5px 0;
+}
+
+.list-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.list-container::-webkit-scrollbar-track {
+  background: #ddd;
+  border-radius: 3px;
+}
+
+.list-container::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 3px;
+}
+
+.item-list {
+  position: relative;
+  padding: 3px;
+  margin: 5px 0;
+  background-color: #26a7c5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.item-list.active {
+  font-weight: 700;
+  padding-left: 16px;
+}
+.item-list.active:before {
+  background-image: url(../../../public/images/play.svg);
+  background-size: 16px 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  bottom: 0;
+  content: "";
+  display: block;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 16px;
+}
+
+.item-list:hover {
+  background-color: #269dbb;
+}
+
+.item-list-remove:hover {
+  padding-right: 17px;
+}
+
+.item-list-remove:hover .btn-delete-item {
+  transform: translateX(0);
+}
+
+.btn-delete-item {
+  transition: transform 0.1s ease-in;
+  transform: translateX(17px);
+  cursor: pointer;
+  position: absolute;
+  background: none;
+  border: 0;
+  width: 17px;
+  bottom: 0;
+  padding: 0;
+  top: 0;
+  right: 0;
+  transition: all 0.5;
+}
+
+.btn-delete-item .delete-icon {
+  display: block;
+  height: 17px;
+  width: 17px;
+  background-size: 17px 17px;
+  background-image: url(../../../public/images/delete.svg);
+}
+
+.btn-delete-item:hover .delete-icon {
+  background-image: url(../../../public/images/delete_fill.svg);
+}

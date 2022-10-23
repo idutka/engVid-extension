@@ -1,0 +1,18 @@
+{
+    "addToFavorites": {
+      "message": "Agregar a favoritos",
+      "description": ""
+    },
+    "addToCompleted": {
+      "message": "Añadir a completado",
+      "description": ""
+    },
+    "favorites": {
+      "message": "favoritos",
+      "description": ""
+    },
+    "completed": {
+      "message": "completado",
+      "description": ""
+    }
+  }

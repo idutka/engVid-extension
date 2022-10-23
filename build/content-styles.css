@@ -1,0 +1,73 @@
+#ex-actions {
+  text-align: right;
+  padding-right: 5px;
+  margin-bottom: -30px;
+}
+
+.ex-container {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  height: 32px;
+  width: 32px;
+}
+
+.ex-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.ex-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 32px;
+  width: 32px;
+  background-size: 32px 32px;
+}
+
+.ex-container input#ex-btn-completed ~ .ex-checkmark {
+  background-image: url("chrome-extension://__MSG_@@extension_id__/images/checkbox_empty.svg");
+}
+
+.ex-container input#ex-btn-favorite ~ .ex-checkmark {
+  background-image: url("chrome-extension://__MSG_@@extension_id__/images/favorite_empty.svg");
+}
+
+.ex-container input#ex-btn-completed:checked ~ .ex-checkmark {
+  background-image: url("chrome-extension://__MSG_@@extension_id__/images/checkbox_empty.svg"),
+    url("chrome-extension://__MSG_@@extension_id__/images/checkbox.svg");
+}
+
+.ex-container input#ex-btn-favorite:checked ~ .ex-checkmark {
+  background-image: url("chrome-extension://__MSG_@@extension_id__/images/favorite_empty.svg"),
+    url("chrome-extension://__MSG_@@extension_id__/images/favorite.svg");
+}
+
+.ex-icon {
+  display: inline-block;
+  line-height: 1;
+  height: 12px;
+  width: 12px;
+  position: relative;
+  vertical-align: middle;
+}
+
+.ex-icon:before {
+  content: "";
+  height: 14px;
+  width: 14px;
+  top: -2px;
+  position: absolute;
+  background-size: 14px 14px;
+}
+.ex-icon.ex-icon-completed:before {
+  background-image: url("chrome-extension://__MSG_@@extension_id__/images/checkbox.svg");
+}
+.ex-icon.ex-icon-favorite:before {
+  background-image: url("chrome-extension://__MSG_@@extension_id__/images/favorite.svg");
+}
