@@ -17,7 +17,7 @@ class Storage {
 
   getItem() {
     return new Promise((resolve, reject) => {
-      chrome.storage.local.get([this.key], (result) => {
+      chrome.storage.sync.get([this.key], (result) => {
         resolve(result[this.key]);
       });
     });
@@ -25,7 +25,7 @@ class Storage {
 
   setItem(item) {
     return new Promise((resolve, reject) => {
-      chrome.storage.local.set({ [this.key]: item }, () => {
+      chrome.storage.sync.set({ [this.key]: item }, () => {
         resolve(item);
       });
     });
