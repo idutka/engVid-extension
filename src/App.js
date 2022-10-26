@@ -89,7 +89,6 @@ const App = () => {
         activeTab.id,
         { action: GET_CURRENT_LESSONS },
         (response) => {
-          console.log(response);
           if (!chrome.runtime.lastError) {
             setCurrentLesson(response);
           } else {

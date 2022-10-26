@@ -15,40 +15,35 @@ class Storage {
     this.key = key || "storage";
   }
 
-  getItem() {
-    return new Promise((resolve, reject) => {
-      chrome.storage.sync.get([this.key], (result) => {
-        resolve(result[this.key]);
-      });
-    });
+  async getItem() {
+    const result = await chrome.storage.sync.get([this.key]);
+    return result[this.key];
   }
 
-  setItem(item) {
-    return new Promise((resolve, reject) => {
-      chrome.storage.sync.set({ [this.key]: item }, () => {
-        resolve(item);
-      });
-    });
+  async setItem(item) {
+    await chrome.storage.sync.set({ [this.key]: item });
+    return item;
   }
 
-  getItems() {
-    return this.getItem().then((items) => items || []);
+  async getItems() {
+    const items = await this.getItem();
+    return items || [];
   }
 
-  setItems(items) {
+  async setItems(items) {
     return this.setItem(items);
   }
 
-  addItem({ url, title = "" }) {
-    return this.getItems()
-      .then((items) => [{ url: url, title: title, date: Date.now() }, ...items])
-      .then((items) => this.setItems(items));
+  async addItem({ url, title = "" }) {
+    const items = await this.getItems();
+    const newItems = [{ url: url, title: title, date: Date.now() }, ...items];
+    return this.setItems(newItems);
   }
 
-  removeItem(url) {
-    return this.getItems()
-      .then((items) => items.filter((lesson) => lesson.url !== url))
-      .then((items) => this.setItems(items));
+  async removeItem(url) {
+    const items = await this.getItems();
+    const newItems = items.filter((lesson) => lesson.url !== url);
+    return this.setItems(newItems);
   }
 }
 
@@ -58,7 +53,13 @@ const viewStorage = new Storage(STORAGE_VIEW_KEY);
 
 const updatePages = (message) => {
   chrome.tabs.query({ url: SETTINGS.url }, (tabs) => {
-    tabs.forEach((tab) => chrome.tabs.sendMessage(tab.id, message));
+    tabs.forEach((tab) =>
+      chrome.tabs.sendMessage(tab.id, message, () => {
+        if (chrome.runtime.lastError) {
+          console.log("updatePages failed", chrome.runtime.lastError);
+        }
+      })
+    );
   });
 };
 
