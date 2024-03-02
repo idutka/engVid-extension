@@ -1,18 +1,18 @@
 {
-    "addToFavorites": {
-      "message": "Add to favourites",
-      "description": ""
-    },
-    "addToCompleted": {
-      "message": "Add to completed",
-      "description": ""
-    },
-    "favorites": {
-      "message": "favourites",
-      "description": ""
-    },
-    "completed": {
-      "message": "completed",
-      "description": ""
-    }
+  "addToFavorites": {
+    "message": "Add this lesson to favourites",
+    "description": ""
+  },
+  "addToCompleted": {
+    "message": "Add this lesson to completed",
+    "description": ""
+  },
+  "favorites": {
+    "message": "Favourites",
+    "description": ""
+  },
+  "completed": {
+    "message": "Completed",
+    "description": ""
   }
+}

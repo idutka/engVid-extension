@@ -1,14 +1,15 @@
 {
   "manifest_version": 3,
-  "name": "engVid organizer",
-  "description" : "Get quick access to engVid. Add lessons to your favourite list and mark the ones you have already completed.",
+  "name": "engVid Tracker",
+  "description": "Get quick access to engVid. Add lessons to your favourite list and mark the ones you have already completed.",
   "version": "1.0",
   "icons": {
     "128": "icons/icon128.png"
   },
   "default_locale": "en",
   "permissions": [
-    "tabs", "storage"
+    "tabs",
+    "storage"
   ],
   "action": {
     "default_title": "engVid",
@@ -22,9 +23,15 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://*.engvid.com/*"],
-      "css": ["content-styles.css"],
-      "js": ["content-script.js"]
+      "matches": [
+        "https://*.engvid.com/*"
+      ],
+      "css": [
+        "content-styles.css"
+      ],
+      "js": [
+        "content-script.js"
+      ]
     }
   ],
   "web_accessible_resources": [
@@ -35,7 +42,9 @@
         "images/favorite_empty.svg",
         "images/favorite.svg"
       ],
-      "matches": [ "https://*.engvid.com/*"]
+      "matches": [
+        "https://*.engvid.com/*"
+      ]
     }
   ]
 }

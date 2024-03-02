@@ -139,7 +139,7 @@ const App = () => {
       </div>
 
       {completedPageView ? (
-        <div>
+        <div className="content">
           <button
             className="btn add-btn"
             onClick={() => addCompleted()}
@@ -157,7 +157,7 @@ const App = () => {
           />
         </div>
       ) : (
-        <div>
+        <div className="content">
           <button
             className="btn add-btn"
             onClick={() => addFavorite()}
